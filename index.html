@@ -1,0 +1,775 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ShopEase | Discover. Shop. Enjoy.</title>
+
+    <meta name="description" content="ShopEase - Discover fashion, electronics, beauty, home products and amazing shopping deals.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- =================================
+         ANNOUNCEMENT BAR
+    ================================== -->
+
+    <div class="announcement-bar">
+        <p>🎉 Welcome to ShopEase! Get 50% OFF on your first order.</p>
+        <span>Use Code: <strong>FIRST50</strong></span>
+    </div>
+
+
+    <!-- =================================
+         HEADER
+    ================================== -->
+
+    <header class="main-header">
+
+        <div class="header-container">
+
+            <a href="#" class="logo">
+                Shop<span>Ease</span><small>.</small>
+            </a>
+
+            <div class="search-container">
+
+                <select id="searchCategory" aria-label="Search category">
+                    <option value="all">All Categories</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Fashion">Fashion</option>
+                    <option value="Beauty">Beauty</option>
+                    <option value="Home">Home & Living</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Books">Books</option>
+                </select>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search for products..."
+                >
+
+                <button type="button" onclick="searchProducts()">
+                    🔍
+                </button>
+
+            </div>
+
+            <div class="header-actions">
+
+                <button type="button" onclick="showPage('wishlistPage')" class="header-icon">
+                    ♡
+                    <span>Wishlist</span>
+                    <b id="wishlistCount">0</b>
+                </button>
+
+                <button type="button" onclick="showPage('cartPage')" class="header-icon">
+                    🛒
+                    <span>Cart</span>
+                    <b id="cartCount">0</b>
+                </button>
+
+                <button type="button" onclick="showPage('accountPage')" class="account-button">
+                    👤 My Account
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =================================
+         NAVIGATION
+    ================================== -->
+
+    <nav class="navigation">
+
+        <div class="nav-container">
+
+            <button onclick="showPage('homePage')">Home</button>
+
+            <button onclick="filterProducts('all')">All Products</button>
+
+            <button onclick="filterProducts('Electronics')">Electronics</button>
+
+            <button onclick="filterProducts('Fashion')">Fashion</button>
+
+            <button onclick="filterProducts('Beauty')">Beauty</button>
+
+            <button onclick="filterProducts('Home')">Home & Living</button>
+
+            <button onclick="filterProducts('Sports')">Sports</button>
+
+            <button onclick="showPage('ordersPage')">My Orders</button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =================================
+         MAIN WEBSITE
+    ================================== -->
+
+    <main>
+
+        <!-- =================================
+             HOME PAGE
+        ================================== -->
+
+        <section id="homePage" class="page active">
+
+
+            <!-- HERO SECTION -->
+
+            <section class="hero-section">
+
+                <div class="hero-background-shape"></div>
+
+                <div class="hero-content">
+
+                    <span class="hero-label">
+                        ✨ YOUR EVERYDAY SHOPPING DESTINATION
+                    </span>
+
+                    <h1>
+                        Discover More.
+                        <span>Shop Better.</span>
+                        Live Easier.
+                    </h1>
+
+                    <p>
+                        Explore thousands of products across your
+                        favourite categories. Amazing deals,
+                        exciting offers and a better shopping experience.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <button
+                            class="primary-button"
+                            onclick="document.getElementById('productSection').scrollIntoView({behavior:'smooth'})"
+                        >
+                            Explore Products →
+                        </button>
+
+                        <button
+                            class="secondary-button"
+                            onclick="showPage('homePage'); document.getElementById('offerSection').scrollIntoView({behavior:'smooth'})"
+                        >
+                            View Offers
+                        </button>
+
+                    </div>
+
+                    <div class="hero-trust">
+
+                        <div>
+                            <strong>10K+</strong>
+                            <span>Happy Customers</span>
+                        </div>
+
+                        <div>
+                            <strong>500+</strong>
+                            <span>Products</span>
+                        </div>
+
+                        <div>
+                            <strong>24/7</strong>
+                            <span>Shopping</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-visual">
+
+                    <div class="hero-glow"></div>
+
+                    <div class="hero-product hero-product-one">
+                        🎧
+                    </div>
+
+                    <div class="hero-product hero-product-two">
+                        👟
+                    </div>
+
+                    <div class="hero-product hero-product-three">
+                        ⌚
+                    </div>
+
+                    <div class="hero-shopping-bag">
+                        🛍️
+                    </div>
+
+                    <div class="hero-floating-text">
+                        <span>✨</span>
+                        Big Deals
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- BENEFITS -->
+
+            <section class="benefits-section">
+
+                <div class="benefit-card">
+                    <span>🚚</span>
+                    <div>
+                        <h3>Free Delivery</h3>
+                        <p>On selected orders</p>
+                    </div>
+                </div>
+
+                <div class="benefit-card">
+                    <span>🔒</span>
+                    <div>
+                        <h3>Secure Shopping</h3>
+                        <p>Safe shopping experience</p>
+                    </div>
+                </div>
+
+                <div class="benefit-card">
+                    <span>↩️</span>
+                    <div>
+                        <h3>Easy Returns</h3>
+                        <p>Hassle-free returns</p>
+                    </div>
+                </div>
+
+                <div class="benefit-card">
+                    <span>🎧</span>
+                    <div>
+                        <h3>Customer Support</h3>
+                        <p>Here to help you</p>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- CATEGORIES -->
+
+            <section class="category-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-subtitle">EXPLORE OUR STORE</span>
+                        <h2>Shop By Category</h2>
+                        <p>Everything you love, all in one place.</p>
+                    </div>
+
+                    <button onclick="filterProducts('all')" class="text-button">
+                        View All →
+                    </button>
+
+                </div>
+
+
+                <div class="category-grid">
+
+                    <button class="category-card" onclick="filterProducts('Electronics')">
+                        <span class="category-icon">📱</span>
+                        <h3>Electronics</h3>
+                        <p>Smart gadgets</p>
+                    </button>
+
+                    <button class="category-card" onclick="filterProducts('Fashion')">
+                        <span class="category-icon">👗</span>
+                        <h3>Fashion</h3>
+                        <p>Latest trends</p>
+                    </button>
+
+                    <button class="category-card" onclick="filterProducts('Beauty')">
+                        <span class="category-icon">💄</span>
+                        <h3>Beauty</h3>
+                        <p>Beauty essentials</p>
+                    </button>
+
+                    <button class="category-card" onclick="filterProducts('Home')">
+                        <span class="category-icon">🏠</span>
+                        <h3>Home & Living</h3>
+                        <p>Make it beautiful</p>
+                    </button>
+
+                    <button class="category-card" onclick="filterProducts('Sports')">
+                        <span class="category-icon">⚽</span>
+                        <h3>Sports</h3>
+                        <p>Stay active</p>
+                    </button>
+
+                    <button class="category-card" onclick="filterProducts('Books')">
+                        <span class="category-icon">📚</span>
+                        <h3>Books</h3>
+                        <p>Read and learn</p>
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- FIRST ORDER OFFER -->
+
+            <section class="offer-section" id="offerSection">
+
+                <div class="offer-content">
+
+                    <span class="offer-tag">
+                        🎁 EXCLUSIVE WELCOME OFFER
+                    </span>
+
+                    <h2>
+                        Your First Order
+                        <span>Just Got Better!</span>
+                    </h2>
+
+                    <div class="discount-text">
+
+                        <span class="discount-number">50</span>
+                        <span class="discount-percent">%</span>
+                        <span class="discount-off">OFF</span>
+
+                    </div>
+
+                    <p>
+                        Get 50% discount on your first shopping
+                        experience with ShopEase.
+                    </p>
+
+                    <div class="coupon-area">
+
+                        <div>
+                            <small>USE COUPON CODE</small>
+                            <h3>FIRST50</h3>
+                        </div>
+
+                        <button type="button" onclick="copyCoupon()">
+                            COPY CODE
+                        </button>
+
+                    </div>
+
+                    <small class="offer-terms">
+                        Minimum order ₹499. Maximum discount ₹500.
+                        First order only. Terms & Conditions Apply.
+                    </small>
+
+                </div>
+
+
+                <div class="offer-visual">
+
+                    <div class="offer-glow"></div>
+
+                    <div class="offer-circle">
+                        🎁
+                    </div>
+
+                    <div class="floating-tag tag-one">
+                        🔥 50% OFF
+                    </div>
+
+                    <div class="floating-tag tag-two">
+                        🛍️ Shop Now
+                    </div>
+
+                    <div class="floating-tag tag-three">
+                        ✨ Special Deal
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FLASH SALE -->
+
+            <section class="flash-sale-section">
+
+                <div class="flash-heading">
+
+                    <div>
+                        <span class="section-subtitle">DON'T MISS OUT</span>
+                        <h2>⚡ Flash Sale</h2>
+                        <p>Grab your favourite deals before time runs out!</p>
+                    </div>
+
+                    <div class="countdown-container">
+
+                        <span>ENDS IN</span>
+
+                        <div class="countdown-timer">
+
+                            <div>
+                                <strong id="hours">05</strong>
+                                <small>Hours</small>
+                            </div>
+
+                            <b>:</b>
+
+                            <div>
+                                <strong id="minutes">00</strong>
+                                <small>Minutes</small>
+                            </div>
+
+                            <b>:</b>
+
+                            <div>
+                                <strong id="seconds">00</strong>
+                                <small>Seconds</small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="flashSaleGrid" class="product-grid">
+                    <!-- Flash sale products will load through JavaScript -->
+                </div>
+
+            </section>
+
+
+            <!-- FEATURED PRODUCTS -->
+
+            <section class="product-section" id="productSection">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-subtitle">HANDPICKED FOR YOU</span>
+                        <h2>Explore Our Products</h2>
+                        <p>Find your next favourite product.</p>
+                    </div>
+
+                    <select id="sortSelect" onchange="sortProducts()">
+                        <option value="default">Sort By: Featured</option>
+                        <option value="low">Price: Low to High</option>
+                        <option value="high">Price: High to Low</option>
+                        <option value="rating">Top Rated</option>
+                    </select>
+
+                </div>
+
+                <div class="product-information">
+
+                    <p id="productHeading">All Products</p>
+
+                    <span id="productCount">0 Products</span>
+
+                </div>
+
+                <div id="productGrid" class="product-grid">
+                    <!-- Products will load through JavaScript -->
+                </div>
+
+            </section>
+
+
+            <!-- NEWSLETTER -->
+
+            <section class="newsletter-section">
+
+                <div>
+                    <span>💌 STAY UPDATED</span>
+                    <h2>Get Exclusive Offers!</h2>
+                    <p>Subscribe to receive updates about new products and special deals.</p>
+                </div>
+
+                <form id="newsletterForm" class="newsletter-form">
+
+                    <input
+                        type="email"
+                        id="newsletterEmail"
+                        placeholder="Enter your email address"
+                        required
+                    >
+
+                    <button type="submit">
+                        Subscribe →
+                    </button>
+
+                </form>
+
+            </section>
+
+        </section>
+
+
+        <!-- =================================
+             CART PAGE
+        ================================== -->
+
+        <section id="cartPage" class="page">
+
+            <div class="page-heading">
+                <span class="section-subtitle">YOUR SHOPPING BAG</span>
+                <h1>My Shopping Cart 🛒</h1>
+                <p>Review your products before checkout.</p>
+            </div>
+
+            <div id="cartContent"></div>
+
+        </section>
+
+
+        <!-- =================================
+             WISHLIST PAGE
+        ================================== -->
+
+        <section id="wishlistPage" class="page">
+
+            <div class="page-heading">
+                <span class="section-subtitle">SAVED FOR LATER</span>
+                <h1>My Wishlist ♡</h1>
+                <p>Your favourite products in one place.</p>
+            </div>
+
+            <div id="wishlistGrid" class="product-grid"></div>
+
+        </section>
+
+
+        <!-- =================================
+             CHECKOUT PAGE
+        ================================== -->
+
+        <section id="checkoutPage" class="page">
+
+            <div class="page-heading">
+                <span class="section-subtitle">ALMOST THERE</span>
+                <h1>Checkout</h1>
+                <p>Complete your order details.</p>
+            </div>
+
+            <div class="checkout-layout">
+
+                <form id="checkoutForm" class="checkout-form">
+
+                    <h2>📦 Shipping Information</h2>
+
+                    <label for="shippingName">Full Name</label>
+
+                    <input
+                        type="text"
+                        id="shippingName"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                    <label for="shippingPhone">Phone Number</label>
+
+                    <input
+                        type="tel"
+                        id="shippingPhone"
+                        placeholder="10-digit mobile number"
+                        pattern="[0-9]{10}"
+                        required
+                    >
+
+                    <label for="shippingAddress">Address</label>
+
+                    <textarea
+                        id="shippingAddress"
+                        placeholder="House number, street, area"
+                        required
+                    ></textarea>
+
+                    <label for="shippingCity">City</label>
+
+                    <input
+                        type="text"
+                        id="shippingCity"
+                        placeholder="Enter city"
+                        required
+                    >
+
+                    <label for="shippingPin">PIN Code</label>
+
+                    <input
+                        type="text"
+                        id="shippingPin"
+                        placeholder="6-digit PIN code"
+                        pattern="[0-9]{6}"
+                        required
+                    >
+
+                    <h2>💳 Payment Method</h2>
+
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="COD" checked>
+                        Cash on Delivery
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="UPI">
+                        UPI Payment (Demo)
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="Card">
+                        Credit / Debit Card (Demo)
+                    </label>
+
+                    <button type="submit" class="place-order-button">
+                        Place Order →
+                    </button>
+
+                </form>
+
+
+                <div id="checkoutSummary" class="checkout-summary">
+                    <h2>Order Summary</h2>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             MY ORDERS PAGE
+        ================================== -->
+
+        <section id="ordersPage" class="page">
+
+            <div class="page-heading">
+                <span class="section-subtitle">YOUR PURCHASES</span>
+                <h1>My Orders 📦</h1>
+                <p>View your previous orders.</p>
+            </div>
+
+            <div id="ordersContent"></div>
+
+        </section>
+
+
+        <!-- =================================
+             ACCOUNT PAGE
+        ================================== -->
+
+        <section id="accountPage" class="page">
+
+            <div class="page-heading">
+                <span class="section-subtitle">YOUR PROFILE</span>
+                <h1>My Account 👤</h1>
+                <p>Manage your ShopEase account.</p>
+            </div>
+
+            <div id="accountContent"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =================================
+         FOOTER
+    ================================== -->
+
+    <footer class="main-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a href="#" class="logo">
+                    Shop<span>Ease</span><small>.</small>
+                </a>
+
+                <p>
+                    Discover a better way to shop.
+                    Your favourite products, amazing offers
+                    and a convenient shopping experience.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <a href="#" onclick="showPage('homePage')">Home</a>
+                <a href="#" onclick="showPage('cartPage')">Shopping Cart</a>
+                <a href="#" onclick="showPage('wishlistPage')">Wishlist</a>
+                <a href="#" onclick="showPage('ordersPage')">My Orders</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Categories</h3>
+
+                <a href="#" onclick="filterProducts('Electronics')">Electronics</a>
+                <a href="#" onclick="filterProducts('Fashion')">Fashion</a>
+                <a href="#" onclick="filterProducts('Beauty')">Beauty</a>
+                <a href="#" onclick="filterProducts('Home')">Home & Living</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Customer Support</h3>
+
+                <a href="#">Help Centre</a>
+                <a href="#">Return Policy</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 ShopEase. All Rights Reserved.
+            </p>
+
+            <p>
+                Designed with ❤️ for a better shopping experience.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =================================
+         TOAST NOTIFICATION
+    ================================== -->
+
+    <div id="toast" class="toast"></div>
+
+
+</body>
+
+</html>

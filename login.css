@@ -1,0 +1,243 @@
+
+/* =========================
+   GLOBAL STYLING
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #e8efff, #f8faff);
+    min-height: 100vh;
+    color: #172033;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.auth-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+/* =========================
+   BRAND
+========================= */
+
+.auth-brand {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.auth-brand h1 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #172033;
+    letter-spacing: -1px;
+}
+
+.auth-brand h1 span {
+    color: #2563eb;
+}
+
+.auth-brand p {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* =========================
+   AUTH CARD
+========================= */
+
+.auth-card {
+    width: 100%;
+    max-width: 430px;
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid #e5eaf3;
+    box-shadow: 0 15px 45px rgba(15, 23, 42, 0.08);
+}
+
+/* =========================
+   AUTH HEADER
+========================= */
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.auth-header h2 {
+    font-size: 25px;
+    margin-bottom: 9px;
+}
+
+.auth-header p {
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* =========================
+   LOGIN / REGISTER TABS
+========================= */
+
+.auth-tabs {
+    display: flex;
+    background: #f1f5f9;
+    padding: 5px;
+    border-radius: 9px;
+    margin-bottom: 24px;
+}
+
+.tab {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: 0.3s;
+}
+
+.tab.active {
+    background: #ffffff;
+    color: #2563eb;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   FORM STYLING
+========================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #334155;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #dbe2ec;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.auth-button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+    min-height: 20px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #dc2626;
+}
+
+.message.success {
+    color: #15803d;
+}
+
+/* =========================
+   HIDDEN FORM
+========================= */
+
+.hidden {
+    display: none !important;
+}
+
+/* =========================
+   FOOTER NOTE
+========================= */
+
+.auth-note {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 11px;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+footer {
+    margin-top: 25px;
+    font-size: 12px;
+    color: #94a3b8;
+    text-align: center;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 480px) {
+
+    .auth-card {
+        padding: 23px 18px;
+    }
+
+    .auth-brand h1 {
+        font-size: 30px;
+    }
+
+    .auth-header h2 {
+        font-size: 22px;
+    }
+
+}
